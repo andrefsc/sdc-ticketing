@@ -66,6 +66,7 @@ add_bg_image_with_transparency(image_base64, opacity=0.1)
 image_path = os.path.join(current_directory, 'image02.png')  
 st.image(image_path, width=200, use_column_width=False) 
 
+
 # Load the model and the OneHotEncoder
 model_and_encoder = joblib.load('zP_model_and_encoder.pkl')
 model_and_encoder1 = joblib.load('zA_model_and_encoder.pkl')
