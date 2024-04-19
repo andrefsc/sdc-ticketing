@@ -82,7 +82,7 @@ weekday_types = ['weekdaygame', 'weekendgame']
 game_classes = ['Classic', 'Regular']
 
 # Streamlit app
-st.title('FanFair: Precios Justos a Través de ML para Entradas de Estadios')
+st.title('FanFair: Precios Justos a Través de AI para Entradas de Estadios')
 
 # Seleção do usuário
 selected_competition_type = st.selectbox('Tipo de Competencia', competition_types)
