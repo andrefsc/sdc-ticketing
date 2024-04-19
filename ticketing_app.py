@@ -85,7 +85,7 @@ game_classes = ['Classic', 'Regular']
 st.title('FanFair: Precios Justos a Través de AI para Entradas de Estadios')
 
 # Seleção do usuário
-selected_competition_type = st.selectbox('Tipo de Competencia', competition_types)
+selected_competition_type = st.selectbox('Competition', competition_types)
 selected_hour_game = st.selectbox('Hora del Juego', hour_games)
 selected_weekday_type = st.selectbox('Tipo de Día de la Semana', weekday_types)
 selected_game_class = st.selectbox('Clase del Juego', game_classes)
@@ -183,16 +183,16 @@ if st.button('Generar predicción de Precios'):
         revenue_max = round(max_prediction * rounded_attendance_prediction,2)
         
         # Printing the combined results with the revenue calculation
-        st.write(f"Precio del ticket predicho: {rounded_prediction}  |  Ingresos esperados: {revenue_predicted}")
-        st.write(f"Precio del ticket mínimo: {min_prediction}  |  Ingresos esperados: {revenue_min}")
-        st.write(f"Precio del ticket máximo: {max_prediction}  |  Ingresos esperados: {revenue_max}\n")
+        st.write(f"Precio del ticket predicho: {rounded_prediction}  |  Ingresos esperados: {round(revenue_predicted)}")
+        st.write(f"Precio del ticket mínimo: {min_prediction}  |  Ingresos esperados: {round(revenue_min)}")
+        st.write(f"Precio del ticket máximo: {max_prediction}  |  Ingresos esperados: {round(revenue_max}\n")
 
         st.markdown('<hr style="border:1px solid #021a40">', unsafe_allow_html=True)
 
         # Update revenue summaries
-        revenue_summary['Predicted Revenue'] += round(revenue_predicted,2)
-        revenue_summary['Min Revenue'] += round(revenue_min,2)
-        revenue_summary['Max Revenue'] += round(revenue_max,2)
+        revenue_summary['Predicted Revenue'] += round(revenue_predicted,0)
+        revenue_summary['Min Revenue'] += round(revenue_min,0)
+        revenue_summary['Max Revenue'] += round(revenue_max,0)
 
     # Displaying the revenue summary table
     df_revenue_summary = pd.DataFrame([revenue_summary])
