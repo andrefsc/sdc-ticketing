@@ -184,9 +184,9 @@ if st.button('Generar predicción de Precios'):
         revenue_max = round(max_prediction * rounded_attendance_prediction,2)
         
         # Printing the combined results with the revenue calculation
-        st.write(f"Precio del ticket predicho: {rounded_prediction}  |  Ingresos esperados: {round(revenue_predicted)}")
-        st.write(f"Precio del ticket mínimo: {min_prediction}  |  Ingresos esperados: {round(revenue_min)}")
-        st.write(f"Precio del ticket máximo: {max_prediction}  |  Ingresos esperados: {round(revenue_max}\n")
+        st.write(f"Precio del ticket predicho: {rounded_prediction}  |  Ingresos esperados: {revenue_predicted}")
+        st.write(f"Precio del ticket mínimo: {min_prediction}  |  Ingresos esperados: {revenue_min}")
+        st.write(f"Precio del ticket máximo: {max_prediction}  |  Ingresos esperados: {revenue_max}\n")
 
         st.markdown('<hr style="border:1px solid #021a40">', unsafe_allow_html=True)
 
