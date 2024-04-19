@@ -1,20 +1,3 @@
-import sys
-import subprocess
-import pkg_resources
-
-required = {'joblib'}
-installed = {pkg.key for pkg in pkg_resources.working_set}
-missing = required - installed
-
-if missing:
-    python = sys.executable
-    try:
-        subprocess.check_call([python, '-m', 'pip', 'install', *missing])
-    except subprocess.CalledProcessError as e:
-        print("Falha ao instalar pacotes:", e)
-        print("Output do erro:", e.output)
-        raise SystemExit(e.returncode)  # Encerra o script com o código de erro
-
 import streamlit as st
 import numpy as np
 import pandas as pd
