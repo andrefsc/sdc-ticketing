@@ -1,5 +1,15 @@
 import sys
-!{sys.executable} -m pip install joblib
+import subprocess
+import pkg_resources
+
+required = {'joblib'}
+installed = {pkg.key for pkg in pkg_resources.working_set}
+missing = required - installed
+
+if missing:
+    # Implementando uma instalação automática de pacotes
+    python = sys.executable
+    subprocess.check_call([python, '-m', 'pip', 'install', *missing], stdout=subprocess.DEVNULL)
 
 import streamlit as st
 import numpy as np
